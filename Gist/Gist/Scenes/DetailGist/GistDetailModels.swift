@@ -18,7 +18,7 @@ enum GistDetail {
                 var error: Error
             }
             struct Success {
-                var caracter: GistsListViewData
+                var caracter: GistsViewData
             }
         }
         enum ViewModel {
@@ -26,7 +26,7 @@ enum GistDetail {
                 var error: Error
             }
             struct Success {
-               var caracter: GistsListViewData
+               var caracter: GistsViewData
             }
         }
     }

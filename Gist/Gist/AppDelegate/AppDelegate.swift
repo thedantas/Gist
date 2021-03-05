@@ -12,22 +12,17 @@ import NotificationCenter
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    lazy var appCoordinator = AppCoordinator()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
     
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = appCoordinator.tabBarController
+        window?.rootViewController = UINavigationController(rootViewController: TabBarViewController())
         window?.makeKeyAndVisible()
-        appCoordinator.start()
 
         UNUserNotificationCenter.current().delegate = self
         return true
     }
-
-
-
 
 }
 

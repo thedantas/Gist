@@ -9,7 +9,7 @@ import UIKit
 
 // MARK: - Coordinator
 protocol GistListViewControllerCoordinator: AnyObject {
-    func showDeviceDetails(from: GistListViewController, selectedDevice: GistsListViewData)
+    func showDeviceDetails(from: GistListViewController, selectedDevice: GistsViewData)
 }
 
 class GistListViewController: UIViewController {
@@ -20,28 +20,28 @@ class GistListViewController: UIViewController {
     var router: (NSObjectProtocol & GistListRoutingLogic & GistListDataPassing)?
     var page:Int = 1
     
-    var locally: [GistsListViewData] = []
+    var locally: [GistsViewData] = []
     private var tableView = InsetGroupedTableView()
     private lazy var tableViewManager = TableViewManager(with: tableView)
 
     // Constructor
-//    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-//        setup()
-//    }
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//        setup()
-//    }
-    init(coordinator: GistListViewControllerCoordinator) {
-        self.coordinator = coordinator
-        super.init(nibName: nil, bundle: nil)
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
     }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
     }
+//    init(coordinator: GistListViewControllerCoordinator) {
+//        self.coordinator = coordinator
+//        super.init(nibName: nil, bundle: nil)
+//        setup()
+//    }
+//
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     override func loadView() {
         view = tableView
@@ -50,13 +50,15 @@ class GistListViewController: UIViewController {
     override func viewDidLoad() {
        
         super.viewDidLoad()
-        navigationItem.title = "Gist"
+        self.navigationItem.title = "Gist"
+        self.title = "Gist"
+        
         
         self.interactor?.getGistList(request: GistList.GetGistList.Request(page: page))
         tableView.register(DeviceCell.self)
     }
  
-    private func makeDeviceRowConfigurator(from device: GistsListViewData) -> DeviceRowConfigurator {
+    private func makeDeviceRowConfigurator(from device: GistsViewData) -> DeviceRowConfigurator {
         let onTap: (() -> Void) = { [weak self] in
             guard let self = self else { return }
           //self.coordinator?.showDeviceDetails(from: self, selectedDevice: device)
@@ -72,7 +74,7 @@ class GistListViewController: UIViewController {
         return TitleHeaderFooterConfigurator(model: model)
     }
     
-    func fetchDevices(stDevices: [GistsListViewData]) {
+    func fetchDevices(stDevices: [GistsViewData]) {
         tableViewManager.data = [TableSection(rows: stDevices.map(makeDeviceRowConfigurator(from:)))]
         tableView.reloadData()
     }

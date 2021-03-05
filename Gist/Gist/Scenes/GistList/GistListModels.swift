@@ -18,7 +18,7 @@ enum GistList {
                 var error: Error
             }
             struct Success {
-                var gists: [GistsListViewData]
+                var gists: [GistsViewData]
             }
         }
         enum ViewModel {
@@ -26,20 +26,20 @@ enum GistList {
                 var error: Error
             }
             struct Success {
-               var gists: [GistsListViewData]
+               var gists: [GistsViewData]
             }
         }
     }
     enum SelectGist {
         struct Request {
-            var selectGist: GistsListViewData
+            var selectGist: GistsViewData
         }
         enum Response {
             struct Failure {
                 var error: Error
             }
             struct Success {
-                var selectGist: GistsListViewData
+                var selectGist: GistsViewData
             }
         }
         enum ViewModel {
@@ -47,49 +47,9 @@ enum GistList {
                 var error: Error
             }
             struct Success {
-               var selectGist: GistsListViewData
+               var selectGist: GistsViewData
             }
         }
     }
-}
-
-class GistsListViewData {
-    var gistsUrl: String = String()
-    var id: String = String()
-    var htmlUrl: String = String()
-    var files: FileViewData = FileViewData()
-    var gistsPublic: Bool = false
-    var createdAt: String = String()
-    var lastUpdate: String = String()
-    var gistsDescription: String = String()
-    var comments: Int = 0
-    var commnentsUrl: String = String()
-    var owner: OwnerViewData = OwnerViewData()
-    var favorite: Bool = false
-}
-
-class OwnerViewData {
-    var login: String = String()
-    var id: Int = 0
-    var avatar: String = String()
-    var profileURL: String = String()
-    var gistsURL: String = String()
-    var repo: String = String()
-}
-
-class FileExtract {
-    var key: String
-    var files: File
-    init(key: String, file: File) {
-        self.key = key
-        self.files = file
-    }
-}
-
-class FileViewData {
-    var filename: String = String()
-    var language: String = String()
-    var type: String = String()
-    var size: Int = 0
 }
 

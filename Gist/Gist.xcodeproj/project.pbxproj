@@ -9,16 +9,14 @@
 /* Begin PBXBuildFile section */
 		0B0BE4C525F1B7BE00C774B4 /* UIViewControllerExtension+Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0BE4C425F1B7BE00C774B4 /* UIViewControllerExtension+Segue.swift */; };
 		0B0BE4CB25F1C94D00C774B4 /* GistsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0BE4CA25F1C94D00C774B4 /* GistsError.swift */; };
+		0B0BE4D525F2682A00C774B4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0BE4D425F2682A00C774B4 /* TabBarViewController.swift */; };
+		0B0BE4E125F2876900C774B4 /* GistViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0BE4E025F2876900C774B4 /* GistViewData.swift */; };
 		0B45DF2025EEAD1D0019921C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45DF1F25EEAD1D0019921C /* AppDelegate.swift */; };
 		0B45DF2425EEAD1D0019921C /* GistListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45DF2325EEAD1D0019921C /* GistListViewController.swift */; };
 		0B45DF2925EEAD210019921C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B45DF2825EEAD210019921C /* Assets.xcassets */; };
 		0B45DF2C25EEAD210019921C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B45DF2A25EEAD210019921C /* LaunchScreen.storyboard */; };
 		0B45DF3725EEAD220019921C /* GistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45DF3625EEAD220019921C /* GistTests.swift */; };
 		0B45DF4225EEAD220019921C /* GistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45DF4125EEAD220019921C /* GistUITests.swift */; };
-		0B45DF5425EEAF6B0019921C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45DF5325EEAF6B0019921C /* AppCoordinator.swift */; };
-		0B45DF5F25EECB380019921C /* GistListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45DF5E25EECB380019921C /* GistListCoordinator.swift */; };
-		0B45DF6525EECBAC0019921C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45DF6425EECBAC0019921C /* Coordinator.swift */; };
-		0B45DF6D25EECC830019921C /* FavoriteListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45DF6C25EECC830019921C /* FavoriteListCoordinator.swift */; };
 		0B45DF7725EECE890019921C /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45DF7625EECE890019921C /* FavoriteListViewController.swift */; };
 		0B45DFC725EEF20D0019921C /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 0B45DFC625EEF20D0019921C /* Moya */; };
 		0B45E02725EF019A0019921C /* GistListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45E02625EF019A0019921C /* GistListConfigurator.swift */; };
@@ -69,6 +67,8 @@
 /* Begin PBXFileReference section */
 		0B0BE4C425F1B7BE00C774B4 /* UIViewControllerExtension+Segue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControllerExtension+Segue.swift"; sourceTree = "<group>"; };
 		0B0BE4CA25F1C94D00C774B4 /* GistsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsError.swift; sourceTree = "<group>"; };
+		0B0BE4D425F2682A00C774B4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		0B0BE4E025F2876900C774B4 /* GistViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistViewData.swift; sourceTree = "<group>"; };
 		0B45DF1C25EEAD1D0019921C /* Gist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B45DF1F25EEAD1D0019921C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B45DF2325EEAD1D0019921C /* GistListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListViewController.swift; sourceTree = "<group>"; };
@@ -81,10 +81,6 @@
 		0B45DF3D25EEAD220019921C /* GistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B45DF4125EEAD220019921C /* GistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistUITests.swift; sourceTree = "<group>"; };
 		0B45DF4325EEAD220019921C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B45DF5325EEAF6B0019921C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		0B45DF5E25EECB380019921C /* GistListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListCoordinator.swift; sourceTree = "<group>"; };
-		0B45DF6425EECBAC0019921C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		0B45DF6C25EECC830019921C /* FavoriteListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListCoordinator.swift; sourceTree = "<group>"; };
 		0B45DF7625EECE890019921C /* FavoriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
 		0B45E02625EF019A0019921C /* GistListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListConfigurator.swift; sourceTree = "<group>"; };
 		0B45E02B25EF01A60019921C /* GistListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListInteractor.swift; sourceTree = "<group>"; };
@@ -148,6 +144,14 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
+		0B0BE4DC25F2873B00C774B4 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				0B0BE4D425F2682A00C774B4 /* TabBarViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		0B45DF1325EEAD1C0019921C = {
 			isa = PBXGroup;
 			children = (
@@ -177,7 +181,6 @@
 				0B87AE5D25F012F50091BAB2 /* Protocols */,
 				0B87AE5425F0129E0091BAB2 /* Helpers */,
 				0B87AE2F25EFD4940091BAB2 /* Network */,
-				0B45DF5225EEAF380019921C /* Coordinators */,
 				0B45DF7125EECC970019921C /* AppDelegate */,
 				0B45DF7525EECE6A0019921C /* Scenes */,
 				0B45DF2825EEAD210019921C /* Assets.xcassets */,
@@ -203,25 +206,6 @@
 			path = GistUITests;
 			sourceTree = "<group>";
 		};
-		0B45DF5225EEAF380019921C /* Coordinators */ = {
-			isa = PBXGroup;
-			children = (
-				0B45DF6325EECB980019921C /* Protocol */,
-				0B45DF5325EEAF6B0019921C /* AppCoordinator.swift */,
-				0B45DF5E25EECB380019921C /* GistListCoordinator.swift */,
-				0B45DF6C25EECC830019921C /* FavoriteListCoordinator.swift */,
-			);
-			path = Coordinators;
-			sourceTree = "<group>";
-		};
-		0B45DF6325EECB980019921C /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				0B45DF6425EECBAC0019921C /* Coordinator.swift */,
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
 		0B45DF7125EECC970019921C /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +222,7 @@
 				0B87AE9225F14D150091BAB2 /* DetailGist */,
 				0B45E01D25EF01530019921C /* GistList */,
 				0B45E01E25EF015D0019921C /* FavoriteList */,
+				0B0BE4DC25F2873B00C774B4 /* TabBar */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -297,6 +282,7 @@
 			children = (
 				0B87AE5525F012B70091BAB2 /* TableData.swift */,
 				0B87AE6F25F102570091BAB2 /* InsertGroupedTableView.swift */,
+				0B0BE4E025F2876900C774B4 /* GistViewData.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -487,7 +473,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B45DF5425EEAF6B0019921C /* AppCoordinator.swift in Sources */,
 				0B87AE4425EFD5490091BAB2 /* GistsRouter.swift in Sources */,
 				0B0BE4CB25F1C94D00C774B4 /* GistsError.swift in Sources */,
 				0B45E03125EF01B00019921C /* GistListModels.swift in Sources */,
@@ -503,8 +488,8 @@
 				0B87AEBD25F19BD90091BAB2 /* GistDetailPresenter.swift in Sources */,
 				0B87AEAE25F19BA90091BAB2 /* GistDetailConfigurator.swift in Sources */,
 				0B45DF2425EEAD1D0019921C /* GistListViewController.swift in Sources */,
-				0B45DF6525EECBAC0019921C /* Coordinator.swift in Sources */,
 				0B87AE9D25F170D70091BAB2 /* UIViewController+Extensions.swift in Sources */,
+				0B0BE4D525F2682A00C774B4 /* TabBarViewController.swift in Sources */,
 				0B45DF2025EEAD1D0019921C /* AppDelegate.swift in Sources */,
 				0B87AE7525F1069F0091BAB2 /* TitleHeaderFooter.swift in Sources */,
 				0B45DF7725EECE890019921C /* FavoriteListViewController.swift in Sources */,
@@ -512,9 +497,8 @@
 				0B87AEB325F19BB50091BAB2 /* GistDetailInteractor.swift in Sources */,
 				0B87AEC725F19BEE0091BAB2 /* GistDetailWorker.swift in Sources */,
 				0B87AE6825F1003B0091BAB2 /* GistCell.swift in Sources */,
-				0B45DF6D25EECC830019921C /* FavoriteListCoordinator.swift in Sources */,
-				0B45DF5F25EECB380019921C /* GistListCoordinator.swift in Sources */,
 				0B87AE9725F14FF90091BAB2 /* GistDetailViewController.swift in Sources */,
+				0B0BE4E125F2876900C774B4 /* GistViewData.swift in Sources */,
 				0B45E03625EF01BC0019921C /* GistListPresenter.swift in Sources */,
 				0B45E02C25EF01A60019921C /* GistListInteractor.swift in Sources */,
 				0B87AE7025F102570091BAB2 /* InsertGroupedTableView.swift in Sources */,

@@ -14,18 +14,18 @@ protocol GistListBusinessLogic {
 }
 
 protocol GistListDataStore {
-    var selectGist: GistsListViewData? { get set }
+    var selectGist: GistsViewData? { get set }
 }
 
 class GistListInteractor: GistListBusinessLogic, GistListDataStore {
   
    
-    var gistsViewData: [GistsListViewData]!
+    var gistsViewData: [GistsViewData]!
     
 
     // Var's
     var presenter: GistListPresentationLogic?
-    var selectGist: GistsListViewData?
+    var selectGist: GistsViewData?
     let worker: GistListWorkerProtocol?
     
     init(service: GistListWorkerProtocol) {
@@ -56,10 +56,10 @@ class GistListInteractor: GistListBusinessLogic, GistListDataStore {
         }
     }
 
-    func getGists(model: [GistsResponse]) -> [GistsListViewData] {
-        var viewDataArray: [GistsListViewData] = []
+    func getGists(model: [GistsResponse]) -> [GistsViewData] {
+        var viewDataArray: [GistsViewData] = []
         for element in model {
-            let viewData = GistsListViewData()
+            let viewData = GistsViewData()
             let filesViewData = FileViewData()
             let ownerViewData = OwnerViewData()
             viewData.gistsUrl = element.url ?? String()

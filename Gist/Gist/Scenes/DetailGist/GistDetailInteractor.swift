@@ -14,17 +14,17 @@ protocol GistDetailBusinessLogic {
 }
 
 protocol GistDetailDataStore {
-    var selectGist: GistsListViewData? { get set }
+    var selectGist: GistsViewData? { get set }
 }
 
 class GistDetailInteractor: GistDetailBusinessLogic, GistDetailDataStore {
    
-    var gistsViewData: [GistsListViewData]!
+    var gistsViewData: [GistsViewData]!
     
 
     // Var's
     var presenter: GistDetailPresentationLogic?
-    var selectGist: GistsListViewData?
+    var selectGist: GistsViewData?
     let worker: GistDetailWorkerProtocol? = nil 
     
     
