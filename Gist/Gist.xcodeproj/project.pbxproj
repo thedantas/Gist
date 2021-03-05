@@ -3,18 +3,50 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B0BE4C525F1B7BE00C774B4 /* UIViewControllerExtension+Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0BE4C425F1B7BE00C774B4 /* UIViewControllerExtension+Segue.swift */; };
+		0B0BE4CB25F1C94D00C774B4 /* GistsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0BE4CA25F1C94D00C774B4 /* GistsError.swift */; };
 		0B45DF2025EEAD1D0019921C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45DF1F25EEAD1D0019921C /* AppDelegate.swift */; };
-		0B45DF2225EEAD1D0019921C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45DF2125EEAD1D0019921C /* SceneDelegate.swift */; };
-		0B45DF2425EEAD1D0019921C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45DF2325EEAD1D0019921C /* ViewController.swift */; };
-		0B45DF2725EEAD1D0019921C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B45DF2525EEAD1D0019921C /* Main.storyboard */; };
+		0B45DF2425EEAD1D0019921C /* GistListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45DF2325EEAD1D0019921C /* GistListViewController.swift */; };
 		0B45DF2925EEAD210019921C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B45DF2825EEAD210019921C /* Assets.xcassets */; };
 		0B45DF2C25EEAD210019921C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B45DF2A25EEAD210019921C /* LaunchScreen.storyboard */; };
 		0B45DF3725EEAD220019921C /* GistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45DF3625EEAD220019921C /* GistTests.swift */; };
 		0B45DF4225EEAD220019921C /* GistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45DF4125EEAD220019921C /* GistUITests.swift */; };
+		0B45DF5425EEAF6B0019921C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45DF5325EEAF6B0019921C /* AppCoordinator.swift */; };
+		0B45DF5F25EECB380019921C /* GistListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45DF5E25EECB380019921C /* GistListCoordinator.swift */; };
+		0B45DF6525EECBAC0019921C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45DF6425EECBAC0019921C /* Coordinator.swift */; };
+		0B45DF6D25EECC830019921C /* FavoriteListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45DF6C25EECC830019921C /* FavoriteListCoordinator.swift */; };
+		0B45DF7725EECE890019921C /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45DF7625EECE890019921C /* FavoriteListViewController.swift */; };
+		0B45DFC725EEF20D0019921C /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 0B45DFC625EEF20D0019921C /* Moya */; };
+		0B45E02725EF019A0019921C /* GistListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45E02625EF019A0019921C /* GistListConfigurator.swift */; };
+		0B45E02C25EF01A60019921C /* GistListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45E02B25EF01A60019921C /* GistListInteractor.swift */; };
+		0B45E03125EF01B00019921C /* GistListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45E03025EF01B00019921C /* GistListModels.swift */; };
+		0B45E03625EF01BC0019921C /* GistListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45E03525EF01BC0019921C /* GistListPresenter.swift */; };
+		0B45E03E25EF01E00019921C /* GistListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45E03D25EF01E00019921C /* GistListRouter.swift */; };
+		0B45E04325EF01E90019921C /* GistListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45E04225EF01E90019921C /* GistListWorker.swift */; };
+		0B45E04825EF030D0019921C /* GistListViewController+DisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45E04725EF030D0019921C /* GistListViewController+DisplayLogic.swift */; };
+		0B87AE3125EFD4A20091BAB2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87AE3025EFD4A20091BAB2 /* Result.swift */; };
+		0B87AE3625EFD4AB0091BAB2 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87AE3525EFD4AB0091BAB2 /* TargetType.swift */; };
+		0B87AE4425EFD5490091BAB2 /* GistsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87AE4325EFD5490091BAB2 /* GistsRouter.swift */; };
+		0B87AE4A25EFD5790091BAB2 /* GistsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87AE4925EFD5790091BAB2 /* GistsResponse.swift */; };
+		0B87AE5625F012B70091BAB2 /* TableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87AE5525F012B70091BAB2 /* TableData.swift */; };
+		0B87AE5F25F013040091BAB2 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87AE5E25F013040091BAB2 /* Reusable.swift */; };
+		0B87AE6825F1003B0091BAB2 /* GistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87AE6725F1003A0091BAB2 /* GistCell.swift */; };
+		0B87AE7025F102570091BAB2 /* InsertGroupedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87AE6F25F102570091BAB2 /* InsertGroupedTableView.swift */; };
+		0B87AE7525F1069F0091BAB2 /* TitleHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87AE7425F1069F0091BAB2 /* TitleHeaderFooter.swift */; };
+		0B87AE8E25F148310091BAB2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0B87AE8D25F148310091BAB2 /* Kingfisher */; };
+		0B87AE9725F14FF90091BAB2 /* GistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87AE9625F14FF90091BAB2 /* GistDetailViewController.swift */; };
+		0B87AE9D25F170D70091BAB2 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87AE9C25F170D60091BAB2 /* UIViewController+Extensions.swift */; };
+		0B87AEA625F19B8A0091BAB2 /* GistDetailViewController+DisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87AEA525F19B8A0091BAB2 /* GistDetailViewController+DisplayLogic.swift */; };
+		0B87AEAE25F19BA90091BAB2 /* GistDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87AEAD25F19BA90091BAB2 /* GistDetailConfigurator.swift */; };
+		0B87AEB325F19BB50091BAB2 /* GistDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87AEB225F19BB50091BAB2 /* GistDetailInteractor.swift */; };
+		0B87AEB825F19BC50091BAB2 /* GistDetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87AEB725F19BC50091BAB2 /* GistDetailModels.swift */; };
+		0B87AEBD25F19BD90091BAB2 /* GistDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87AEBC25F19BD90091BAB2 /* GistDetailPresenter.swift */; };
+		0B87AEC225F19BE40091BAB2 /* GistDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87AEC125F19BE40091BAB2 /* GistDetailRouter.swift */; };
+		0B87AEC725F19BEE0091BAB2 /* GistDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87AEC625F19BEE0091BAB2 /* GistDetailWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +67,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B0BE4C425F1B7BE00C774B4 /* UIViewControllerExtension+Segue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControllerExtension+Segue.swift"; sourceTree = "<group>"; };
+		0B0BE4CA25F1C94D00C774B4 /* GistsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsError.swift; sourceTree = "<group>"; };
 		0B45DF1C25EEAD1D0019921C /* Gist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B45DF1F25EEAD1D0019921C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0B45DF2125EEAD1D0019921C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0B45DF2325EEAD1D0019921C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0B45DF2625EEAD1D0019921C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0B45DF2325EEAD1D0019921C /* GistListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListViewController.swift; sourceTree = "<group>"; };
 		0B45DF2825EEAD210019921C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B45DF2B25EEAD210019921C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B45DF2D25EEAD210019921C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +81,36 @@
 		0B45DF3D25EEAD220019921C /* GistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B45DF4125EEAD220019921C /* GistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistUITests.swift; sourceTree = "<group>"; };
 		0B45DF4325EEAD220019921C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B45DF5325EEAF6B0019921C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		0B45DF5E25EECB380019921C /* GistListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListCoordinator.swift; sourceTree = "<group>"; };
+		0B45DF6425EECBAC0019921C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		0B45DF6C25EECC830019921C /* FavoriteListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListCoordinator.swift; sourceTree = "<group>"; };
+		0B45DF7625EECE890019921C /* FavoriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
+		0B45E02625EF019A0019921C /* GistListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListConfigurator.swift; sourceTree = "<group>"; };
+		0B45E02B25EF01A60019921C /* GistListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListInteractor.swift; sourceTree = "<group>"; };
+		0B45E03025EF01B00019921C /* GistListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListModels.swift; sourceTree = "<group>"; };
+		0B45E03525EF01BC0019921C /* GistListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListPresenter.swift; sourceTree = "<group>"; };
+		0B45E03D25EF01E00019921C /* GistListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListRouter.swift; sourceTree = "<group>"; };
+		0B45E04225EF01E90019921C /* GistListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistListWorker.swift; sourceTree = "<group>"; };
+		0B45E04725EF030D0019921C /* GistListViewController+DisplayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GistListViewController+DisplayLogic.swift"; sourceTree = "<group>"; };
+		0B87AE3025EFD4A20091BAB2 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		0B87AE3525EFD4AB0091BAB2 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		0B87AE4325EFD5490091BAB2 /* GistsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsRouter.swift; sourceTree = "<group>"; };
+		0B87AE4925EFD5790091BAB2 /* GistsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsResponse.swift; sourceTree = "<group>"; };
+		0B87AE5525F012B70091BAB2 /* TableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableData.swift; sourceTree = "<group>"; };
+		0B87AE5E25F013040091BAB2 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		0B87AE6725F1003A0091BAB2 /* GistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistCell.swift; sourceTree = "<group>"; };
+		0B87AE6F25F102570091BAB2 /* InsertGroupedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertGroupedTableView.swift; sourceTree = "<group>"; };
+		0B87AE7425F1069F0091BAB2 /* TitleHeaderFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaderFooter.swift; sourceTree = "<group>"; };
+		0B87AE9625F14FF90091BAB2 /* GistDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailViewController.swift; sourceTree = "<group>"; };
+		0B87AE9C25F170D60091BAB2 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		0B87AEA525F19B8A0091BAB2 /* GistDetailViewController+DisplayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GistDetailViewController+DisplayLogic.swift"; sourceTree = "<group>"; };
+		0B87AEAD25F19BA90091BAB2 /* GistDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailConfigurator.swift; sourceTree = "<group>"; };
+		0B87AEB225F19BB50091BAB2 /* GistDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailInteractor.swift; sourceTree = "<group>"; };
+		0B87AEB725F19BC50091BAB2 /* GistDetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailModels.swift; sourceTree = "<group>"; };
+		0B87AEBC25F19BD90091BAB2 /* GistDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailPresenter.swift; sourceTree = "<group>"; };
+		0B87AEC125F19BE40091BAB2 /* GistDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailRouter.swift; sourceTree = "<group>"; };
+		0B87AEC625F19BEE0091BAB2 /* GistDetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailWorker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +118,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B87AE8E25F148310091BAB2 /* Kingfisher in Frameworks */,
+				0B45DFC725EEF20D0019921C /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +140,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B0BE4C925F1C93E00C774B4 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				0B0BE4CA25F1C94D00C774B4 /* GistsError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		0B45DF1325EEAD1C0019921C = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +171,16 @@
 		0B45DF1E25EEAD1D0019921C /* Gist */ = {
 			isa = PBXGroup;
 			children = (
-				0B45DF1F25EEAD1D0019921C /* AppDelegate.swift */,
-				0B45DF2125EEAD1D0019921C /* SceneDelegate.swift */,
-				0B45DF2325EEAD1D0019921C /* ViewController.swift */,
-				0B45DF2525EEAD1D0019921C /* Main.storyboard */,
+				0B0BE4C925F1C93E00C774B4 /* Error */,
+				0B87AE9B25F170B20091BAB2 /* Extensions */,
+				0B87AE6625F013330091BAB2 /* Components */,
+				0B87AE5D25F012F50091BAB2 /* Protocols */,
+				0B87AE5425F0129E0091BAB2 /* Helpers */,
+				0B87AE2F25EFD4940091BAB2 /* Network */,
+				0B45DF5225EEAF380019921C /* Coordinators */,
+				0B45DF7125EECC970019921C /* AppDelegate */,
+				0B45DF7525EECE6A0019921C /* Scenes */,
 				0B45DF2825EEAD210019921C /* Assets.xcassets */,
-				0B45DF2A25EEAD210019921C /* LaunchScreen.storyboard */,
-				0B45DF2D25EEAD210019921C /* Info.plist */,
 			);
 			path = Gist;
 			sourceTree = "<group>";
@@ -128,6 +203,153 @@
 			path = GistUITests;
 			sourceTree = "<group>";
 		};
+		0B45DF5225EEAF380019921C /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				0B45DF6325EECB980019921C /* Protocol */,
+				0B45DF5325EEAF6B0019921C /* AppCoordinator.swift */,
+				0B45DF5E25EECB380019921C /* GistListCoordinator.swift */,
+				0B45DF6C25EECC830019921C /* FavoriteListCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		0B45DF6325EECB980019921C /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				0B45DF6425EECBAC0019921C /* Coordinator.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		0B45DF7125EECC970019921C /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				0B45DF1F25EEAD1D0019921C /* AppDelegate.swift */,
+				0B45DF2A25EEAD210019921C /* LaunchScreen.storyboard */,
+				0B45DF2D25EEAD210019921C /* Info.plist */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		0B45DF7525EECE6A0019921C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0B87AE9225F14D150091BAB2 /* DetailGist */,
+				0B45E01D25EF01530019921C /* GistList */,
+				0B45E01E25EF015D0019921C /* FavoriteList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		0B45E01D25EF01530019921C /* GistList */ = {
+			isa = PBXGroup;
+			children = (
+				0B45E02225EF016C0019921C /* View */,
+				0B45E02625EF019A0019921C /* GistListConfigurator.swift */,
+				0B45E02B25EF01A60019921C /* GistListInteractor.swift */,
+				0B45E03025EF01B00019921C /* GistListModels.swift */,
+				0B45E03525EF01BC0019921C /* GistListPresenter.swift */,
+				0B45E03D25EF01E00019921C /* GistListRouter.swift */,
+				0B45E04225EF01E90019921C /* GistListWorker.swift */,
+			);
+			path = GistList;
+			sourceTree = "<group>";
+		};
+		0B45E01E25EF015D0019921C /* FavoriteList */ = {
+			isa = PBXGroup;
+			children = (
+				0B45DF7625EECE890019921C /* FavoriteListViewController.swift */,
+			);
+			path = FavoriteList;
+			sourceTree = "<group>";
+		};
+		0B45E02225EF016C0019921C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0B45DF2325EEAD1D0019921C /* GistListViewController.swift */,
+				0B45E04725EF030D0019921C /* GistListViewController+DisplayLogic.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0B87AE2F25EFD4940091BAB2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0B87AE4825EFD5690091BAB2 /* Response */,
+				0B87AE3025EFD4A20091BAB2 /* Result.swift */,
+				0B87AE3525EFD4AB0091BAB2 /* TargetType.swift */,
+				0B87AE4325EFD5490091BAB2 /* GistsRouter.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0B87AE4825EFD5690091BAB2 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				0B87AE4925EFD5790091BAB2 /* GistsResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		0B87AE5425F0129E0091BAB2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0B87AE5525F012B70091BAB2 /* TableData.swift */,
+				0B87AE6F25F102570091BAB2 /* InsertGroupedTableView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0B87AE5D25F012F50091BAB2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0B87AE5E25F013040091BAB2 /* Reusable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		0B87AE6625F013330091BAB2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0B87AE6725F1003A0091BAB2 /* GistCell.swift */,
+				0B87AE7425F1069F0091BAB2 /* TitleHeaderFooter.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0B87AE9225F14D150091BAB2 /* DetailGist */ = {
+			isa = PBXGroup;
+			children = (
+				0B87AEA425F19B5F0091BAB2 /* View */,
+				0B87AEAD25F19BA90091BAB2 /* GistDetailConfigurator.swift */,
+				0B87AEB225F19BB50091BAB2 /* GistDetailInteractor.swift */,
+				0B87AEB725F19BC50091BAB2 /* GistDetailModels.swift */,
+				0B87AEBC25F19BD90091BAB2 /* GistDetailPresenter.swift */,
+				0B87AEC125F19BE40091BAB2 /* GistDetailRouter.swift */,
+				0B87AEC625F19BEE0091BAB2 /* GistDetailWorker.swift */,
+			);
+			path = DetailGist;
+			sourceTree = "<group>";
+		};
+		0B87AE9B25F170B20091BAB2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0B87AE9C25F170D60091BAB2 /* UIViewController+Extensions.swift */,
+				0B0BE4C425F1B7BE00C774B4 /* UIViewControllerExtension+Segue.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0B87AEA425F19B5F0091BAB2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0B87AE9625F14FF90091BAB2 /* GistDetailViewController.swift */,
+				0B87AEA525F19B8A0091BAB2 /* GistDetailViewController+DisplayLogic.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +366,10 @@
 			dependencies = (
 			);
 			name = Gist;
+			packageProductDependencies = (
+				0B45DFC625EEF20D0019921C /* Moya */,
+				0B87AE8D25F148310091BAB2 /* Kingfisher */,
+			);
 			productName = Gist;
 			productReference = 0B45DF1C25EEAD1D0019921C /* Gist.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +441,10 @@
 				Base,
 			);
 			mainGroup = 0B45DF1325EEAD1C0019921C;
+			packageReferences = (
+				0B45DFC525EEF20D0019921C /* XCRemoteSwiftPackageReference "Moya" */,
+				0B87AE8C25F148300091BAB2 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 0B45DF1D25EEAD1D0019921C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,7 +463,6 @@
 			files = (
 				0B45DF2C25EEAD210019921C /* LaunchScreen.storyboard in Resources */,
 				0B45DF2925EEAD210019921C /* Assets.xcassets in Resources */,
-				0B45DF2725EEAD1D0019921C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +487,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B45DF2425EEAD1D0019921C /* ViewController.swift in Sources */,
+				0B45DF5425EEAF6B0019921C /* AppCoordinator.swift in Sources */,
+				0B87AE4425EFD5490091BAB2 /* GistsRouter.swift in Sources */,
+				0B0BE4CB25F1C94D00C774B4 /* GistsError.swift in Sources */,
+				0B45E03125EF01B00019921C /* GistListModels.swift in Sources */,
+				0B45E03E25EF01E00019921C /* GistListRouter.swift in Sources */,
+				0B87AE5F25F013040091BAB2 /* Reusable.swift in Sources */,
+				0B45E04825EF030D0019921C /* GistListViewController+DisplayLogic.swift in Sources */,
+				0B87AEA625F19B8A0091BAB2 /* GistDetailViewController+DisplayLogic.swift in Sources */,
+				0B87AE3625EFD4AB0091BAB2 /* TargetType.swift in Sources */,
+				0B87AEB825F19BC50091BAB2 /* GistDetailModels.swift in Sources */,
+				0B45E04325EF01E90019921C /* GistListWorker.swift in Sources */,
+				0B45E02725EF019A0019921C /* GistListConfigurator.swift in Sources */,
+				0B87AE3125EFD4A20091BAB2 /* Result.swift in Sources */,
+				0B87AEBD25F19BD90091BAB2 /* GistDetailPresenter.swift in Sources */,
+				0B87AEAE25F19BA90091BAB2 /* GistDetailConfigurator.swift in Sources */,
+				0B45DF2425EEAD1D0019921C /* GistListViewController.swift in Sources */,
+				0B45DF6525EECBAC0019921C /* Coordinator.swift in Sources */,
+				0B87AE9D25F170D70091BAB2 /* UIViewController+Extensions.swift in Sources */,
 				0B45DF2025EEAD1D0019921C /* AppDelegate.swift in Sources */,
-				0B45DF2225EEAD1D0019921C /* SceneDelegate.swift in Sources */,
+				0B87AE7525F1069F0091BAB2 /* TitleHeaderFooter.swift in Sources */,
+				0B45DF7725EECE890019921C /* FavoriteListViewController.swift in Sources */,
+				0B0BE4C525F1B7BE00C774B4 /* UIViewControllerExtension+Segue.swift in Sources */,
+				0B87AEB325F19BB50091BAB2 /* GistDetailInteractor.swift in Sources */,
+				0B87AEC725F19BEE0091BAB2 /* GistDetailWorker.swift in Sources */,
+				0B87AE6825F1003B0091BAB2 /* GistCell.swift in Sources */,
+				0B45DF6D25EECC830019921C /* FavoriteListCoordinator.swift in Sources */,
+				0B45DF5F25EECB380019921C /* GistListCoordinator.swift in Sources */,
+				0B87AE9725F14FF90091BAB2 /* GistDetailViewController.swift in Sources */,
+				0B45E03625EF01BC0019921C /* GistListPresenter.swift in Sources */,
+				0B45E02C25EF01A60019921C /* GistListInteractor.swift in Sources */,
+				0B87AE7025F102570091BAB2 /* InsertGroupedTableView.swift in Sources */,
+				0B87AEC225F19BE40091BAB2 /* GistDetailRouter.swift in Sources */,
+				0B87AE5625F012B70091BAB2 /* TableData.swift in Sources */,
+				0B87AE4A25EFD5790091BAB2 /* GistsResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,14 +556,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0B45DF2525EEAD1D0019921C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0B45DF2625EEAD1D0019921C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0B45DF2A25EEAD210019921C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -438,7 +690,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S9442X2YNB;
-				INFOPLIST_FILE = Gist/Info.plist;
+				INFOPLIST_FILE = Gist/AppDelegate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,7 +709,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S9442X2YNB;
-				INFOPLIST_FILE = Gist/Info.plist;
+				INFOPLIST_FILE = Gist/AppDelegate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -593,6 +845,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0B45DFC525EEF20D0019921C /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.1;
+			};
+		};
+		0B87AE8C25F148300091BAB2 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0B45DFC625EEF20D0019921C /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B45DFC525EEF20D0019921C /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		0B87AE8D25F148310091BAB2 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B87AE8C25F148300091BAB2 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0B45DF1425EEAD1C0019921C /* Project object */;
 }
