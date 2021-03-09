@@ -25,15 +25,15 @@ To persist offline data I used the native framework, CoreData, It is used to per
 
 ## Screens
 ### Gist List:
-![](gitAssets/gist.png) 
+![](gitAssets/gist.PNG) 
 
 
 ### Detail:
-![](gitAssets/detail.png) 
+![](gitAssets/detail.PNG) 
 
 
 ### Favorite:
-![](gitAssets/favorite_search.png) 
+![](gitAssets/favorite_search.PNG) 
 
 ### File:
-![](gitAssets/file.png) 
+![](gitAssets/file.PNG) 
