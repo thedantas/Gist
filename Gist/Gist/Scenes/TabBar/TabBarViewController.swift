@@ -12,9 +12,11 @@ class TabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
         self.viewControllers = [initialTabBar, finalTabBar]
         // Do any additional setup after loading the view.
     }
+    
     lazy public var initialTabBar: GistListViewController = {
         let navigationController = UINavigationController()
         let gistListViewController = GistListViewController()
@@ -47,14 +49,18 @@ class TabBarViewController: UITabBarController {
         return deviceScanViewController
     }()
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func configureUI() {
+        view.backgroundColor = .white
+  
+     
+        navigationController?.navigationBar.barTintColor = UIColor(red: 55/255, green: 120/255,
+                                                 blue: 250/255, alpha: 1)
+        navigationController?.navigationBar.barStyle = .black
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.isTranslucent = false
+        self.title = "Gist"
+       // showSearchBarButton(shouldShow: true)
     }
-    */
 
 }

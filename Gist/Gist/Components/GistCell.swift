@@ -8,37 +8,41 @@
 import UIKit
 import Kingfisher
 
-final class DeviceCell: UITableViewCell, Reusable, ModelUpdatable, Tappable {
-    struct Model {
-        let description: String
-        let login: String
-        let state: String
-        let image: String
-        let onTap: (() -> Void)?
+final class GistCell: UITableViewCell {
+  
+     let idLabel = UILabel()
+     let nameLabel = UILabel()
+     let statusLabel = UILabel()
+     let loginImageView = UIImageView()
+     let favoriteButton : UIButton = {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(systemName: "star"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFill
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
+        return button
+    }()
+  
+    @objc func increaseFunc() {
+
     }
-
-    private let idLabel = UILabel()
-    private let nameLabel = UILabel()
-    private let statusLabel = UILabel()
-    private let loginImageView = UIImageView()
-    private(set) var onTap: (() -> Void)?
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
+        favoriteButton.addTarget(self, action: #selector(increaseFunc), for: .touchUpInside)
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    func update(with model: Model) {
-        idLabel.text = model.description
-        nameLabel.text = model.login
-        statusLabel.text = "State: \(model.state)"
-        loginImageView.kf.setImage(with: URL(string: model.image))
-        onTap = model.onTap
-    }
+    func update(description: String, login: String, state: String, image: String) {
+          idLabel.text = description
+          nameLabel.text = login
+          statusLabel.text = "types: \(state)"
+          loginImageView.kf.setImage(with: URL(string: image))
+        
+      }
 
     private func setupUI() {
         nameLabel.font = UIFont.preferredFont(forTextStyle: .headline)
@@ -47,6 +51,7 @@ final class DeviceCell: UITableViewCell, Reusable, ModelUpdatable, Tappable {
         
         loginImageView.heightAnchor.constraint(equalToConstant: 60).isActive = true
         loginImageView.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        loginImageView.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
         loginImageView.layer.cornerRadius = (loginImageView.frame.size.width ) / 2
         loginImageView.clipsToBounds = true
         loginImageView.layer.borderWidth = 3.0
@@ -70,8 +75,8 @@ final class DeviceCell: UITableViewCell, Reusable, ModelUpdatable, Tappable {
         horizontalContentStackView.addArrangedSubview(loginImageView)
 
         horizontalContentStackView.addArrangedSubview(contentStackView)
-    
-      
+        horizontalContentStackView.addArrangedSubview(favoriteButton)
+        horizontalContentStackView.distribution = .fill
         contentView.addSubview(horizontalContentStackView)
         NSLayoutConstraint.activate([
             horizontalContentStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
@@ -81,10 +86,5 @@ final class DeviceCell: UITableViewCell, Reusable, ModelUpdatable, Tappable {
         ])
     }
 
-}
-
-struct DeviceRowConfigurator: RowConfigurator {
-    typealias RowType = DeviceCell
-    var model: DeviceCell.Model
 }
 

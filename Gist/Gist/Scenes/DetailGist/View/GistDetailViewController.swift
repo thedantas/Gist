@@ -9,84 +9,46 @@ import UIKit
 
 class GistDetailViewController: UIViewController {
 
-    var device: GistsViewData?
+    var gist: GistsViewData?
     var interactor: GistDetailBusinessLogic?
     var router: (NSObjectProtocol & GistDetailRoutingLogic & GistDetailDataPassing)?
     
     //MARK: Layout
-    public let nameTextField: UITextField = {
-        let nameText = UITextField()
-        nameText.placeholder = "Your Name"
-        nameText.textAlignment = .left
-        nameText.borderStyle = .roundedRect
-        nameText.translatesAutoresizingMaskIntoConstraints = false
-        nameText.keyboardType = .namePhonePad
-        return nameText
-    }()
-    
-    public let emailTextField: UITextField = {
-        let emailText = UITextField()
-        emailText.placeholder = "Email"
-        emailText.textAlignment = .left
-        emailText.borderStyle = .roundedRect
-        emailText.translatesAutoresizingMaskIntoConstraints = false
-        emailText.keyboardType = .emailAddress
-        
-        return emailText
-    }()
-    
-    public let labelDescription: UILabel = {
+    public let ownerLabel: UILabel = {
         let label = UILabel()
-        label.text = "Description"
+        label.text = "Owner:"
         label.font = UIFont.boldSystemFont(ofSize: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
     }()
-    
-    public let descriptionTextView: UITextView = {
-        let descriptionText = UITextView()
-        descriptionText.textAlignment = .left
-        descriptionText.translatesAutoresizingMaskIntoConstraints = false
-        descriptionText.keyboardType = .default
-        descriptionText.returnKeyType = .done
-        descriptionText.layer.borderWidth = 1
-        descriptionText.layer.cornerRadius = 10
-        descriptionText.layer.borderColor = UIColor.gray.cgColor
-        descriptionText.keyboardDismissMode = .interactive
-    
-        return descriptionText
-    }()
-    
-    lazy var switchLog: UISwitch = {
-        let switchLog = UISwitch()
-        switchLog.isOn = true
-        switchLog.translatesAutoresizingMaskIntoConstraints = false
-        return switchLog
-    }()
-    
-    lazy var labelTitlelog: UILabel = {
-        let label = UILabel()
-        label.font.withSize(12)
-        label.adjustsFontSizeToFitWidth = true
-        label.translatesAutoresizingMaskIntoConstraints = false
+    public let ownerImage: UIImageView = {
+        let ownerImage =  UIImageView()
+        ownerImage.frame = CGRect(x: 0,y: 0,width: 200, height: 200)
+        ownerImage.layer.borderColor = UIColor.white.cgColor
+        ownerImage.layer.borderWidth = 3.0
+        ownerImage.layer.cornerRadius = ownerImage.frame.size.height/2
+        ownerImage.layer.masksToBounds = false
+        ownerImage.clipsToBounds = true
+        ownerImage.contentMode = .scaleAspectFill
+        ownerImage.translatesAutoresizingMaskIntoConstraints = false
         
-        return label
-    }()
-    lazy var  stackLog: UIStackView = {
-        let stackLog = UIStackView(arrangedSubviews: [switchLog, labelTitlelog])
-        stackLog.spacing = 5
-        stackLog.translatesAutoresizingMaskIntoConstraints = false
-        stackLog.axis = .horizontal
-        stackLog.distribution = .fillProportionally
-        return stackLog
+ 
+        return ownerImage
     }()
     
+    private var tableView: InsetGroupedTableView = {
+        let tableView = InsetGroupedTableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    private lazy var tableViewManager = TableViewManager(with: tableView)
+    var locally: [File] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         interactor?.getGistDetail(request: GistDetail.GetGistDetail.Request())
-        // Do any additional setup after loading the view.
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -107,36 +69,47 @@ class GistDetailViewController: UIViewController {
     }
     
     private func setupViews() {
-        view.addSubview(nameTextField)
-        view.addSubview(emailTextField)
-        view.addSubview(descriptionTextView)
-        view.addSubview(labelDescription)
-        view.addSubview(stackLog)
-        view.backgroundColor = .white
+        view.addSubview(ownerLabel)
+        view.addSubview(ownerImage)
+        view.addSubview(tableView)
+        view.backgroundColor = .lightGray
+        tableView.register(FileInformationCell.self)
+        
+        
         NSLayoutConstraint.activate([
-            nameTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            nameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            ownerImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            ownerImage.widthAnchor.constraint(equalToConstant: 200),
+            ownerImage.heightAnchor.constraint(equalToConstant: 200),
+            ownerImage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             
-            emailTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 20),
-            emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            emailTextField.bottomAnchor.constraint(equalTo: labelDescription.topAnchor, constant: -20),
+            ownerLabel.topAnchor.constraint(equalTo: ownerImage.bottomAnchor, constant: 20),
+            ownerLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            ownerLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+           // ownerLabel.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -20),
             
-            labelDescription.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
-            labelDescription.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            labelDescription.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            
-            descriptionTextView.topAnchor.constraint(equalTo: labelDescription.bottomAnchor, constant: 10),
-            descriptionTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            descriptionTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-
-            stackLog.topAnchor.constraint(equalTo: descriptionTextView.bottomAnchor, constant: 5),
-            stackLog.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            stackLog.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            stackLog.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
-            
-            
+            tableView.topAnchor.constraint(equalTo: ownerImage.bottomAnchor, constant: 60),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+           tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
         ])
+
+        
+    }
+    private func makeDeviceRowConfigurator(from file: File) -> FileInformationCellRowConfigurator {
+        let onTap: (() -> Void) = { [weak self] in
+            guard let self = self else { return }
+            self.interactor?.selectFile(request: GistDetail.SelectFile.Request(selectFile: file))
+        }
+        let model = FileInformationCell.Model(type: file.type, filename: file.filename, onTap: onTap)
+        return FileInformationCellRowConfigurator(model: model)
+    }
+    private func header(with title: String) -> TitleHeaderFooterConfigurator {
+        let model = TitleHeaderFooter.Model(title: title)
+        return TitleHeaderFooterConfigurator(model: model)
+    }
+    
+    func fetchDevices(stDevices: [File]) {
+        tableViewManager.data = [TableSection(rows: stDevices.map(makeDeviceRowConfigurator(from:)))]
+        tableView.reloadData()
     }
 }

@@ -1,26 +1,25 @@
 //
-//  GistListViewController.swift
+//  FavoriteListViewController.swift
 //  Gist
 //
 //  Created by André  Costa Dantas on 02/03/21.
 //
 
 import UIKit
+import CoreData
 
-class GistListViewController: UIViewController {
+class FavoriteListViewController: UIViewController {
     
     //MARK: Protocol
-    var interactor: GistListBusinessLogic?
-    var router: (NSObjectProtocol & GistListRoutingLogic & GistListDataPassing)?
-    var page:Int = 0
+    var interactor: FavoriteListBusinessLogic?
+    var router: (NSObjectProtocol & FavoriteListRoutingLogic & FavoriteListDataPassing)?
     let cellId = "cellId"
     var gistValue: [GistsViewData] = []
     var filteredData: [GistsViewData] = []
-    var selectData = GistsViewData()
     let searchBar = UISearchBar()
     let tableView = UITableView()
     var searchActive: Bool = false
-
+    var viewModel: GistsViewData?
     
     // Constructor
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -43,9 +42,13 @@ class GistListViewController: UIViewController {
         tableView.register(GistCell.self, forCellReuseIdentifier: cellId)
         tableView.delegate = self
         tableView.dataSource = self
-        self.interactor?.getGistList(request: GistList.GetGistList.Request(page: page))
+        
 
     }
+    override func viewDidAppear(_ animated: Bool) {
+        interactor?.getFavoriteList(request: FavoriteList.GetGistList.Request())
+    }
+    
     
     func fetchGist(gists: [GistsViewData]) {
         gistValue.removeAll()
@@ -74,16 +77,11 @@ class GistListViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.isTranslucent = false
-        let leftNaviButton = UIBarButtonItem(title: "Favorite", style: UIBarButtonItem.Style.plain, target: self, action: #selector(Tapped1))
-         self.navigationItem.leftBarButtonItem = leftNaviButton
-        self.title = "Gist"
+        
+        self.title = "Favorites"
         showSearchBarButton(shouldShow: true)
     }
     
-    @objc func Tapped1() {
-        self.navigationController?.pushViewController(FavoriteListViewController(), animated: true)
-    }
-
     func showSearchBarButton(shouldShow: Bool) {
         if shouldShow {
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search,

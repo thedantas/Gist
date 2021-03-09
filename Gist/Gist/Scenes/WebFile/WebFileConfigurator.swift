@@ -1,23 +1,21 @@
 //
-//  GistDetailConfigurator.swift
+//  WebFileConfigurator.swift
 //  Gist
 //
-//  Created by André  Costa Dantas on 04/03/21.
+//  Created by André  Costa Dantas on 08/03/21.
 //
 
 import Foundation
-import UIKit
-import Moya
 
-extension GistDetailViewController {
+extension WebFileViewController {
 
     // Setup
     func setup() {
 
         let viewController          = self
-        let interactor              = GistDetailInteractor()
-        let presenter               = GistDetailPresenter()
-        let router                  = GistDetailRouter()
+        let interactor              = WebFileInteractor()
+        let presenter               = WebFilePresenter()
+        let router                  = WebFileRouter()
 
         viewController.interactor   = interactor
         viewController.router       = router

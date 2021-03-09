@@ -18,7 +18,7 @@ enum GistDetail {
                 var error: Error
             }
             struct Success {
-                var caracter: GistsViewData
+                var gist: GistsViewData
             }
         }
         enum ViewModel {
@@ -26,7 +26,28 @@ enum GistDetail {
                 var error: Error
             }
             struct Success {
-               var caracter: GistsViewData
+               var gist: GistsViewData
+            }
+        }
+    }
+    enum SelectFile {
+        struct Request {
+                var selectFile: File
+        }
+        enum Response {
+            struct Failure {
+                var error: Error
+            }
+            struct Success {
+                var selectGist: String
+            }
+        }
+        enum ViewModel {
+            struct Failure {
+                var error: Error
+            }
+            struct Success {
+               var selectGist: String
             }
         }
     }

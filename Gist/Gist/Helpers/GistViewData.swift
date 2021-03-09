@@ -11,7 +11,7 @@ class GistsViewData {
     var gistsUrl: String = String()
     var id: String = String()
     var htmlUrl: String = String()
-    var files: FileViewData = FileViewData()
+    var files: [File] = []
     var gistsPublic: Bool = false
     var createdAt: String = String()
     var lastUpdate: String = String()
@@ -33,17 +33,20 @@ class OwnerViewData {
 
 class FileExtract {
     var key: String
-    var files: File
-    init(key: String, file: File) {
-        self.key = key
-        self.files = file
-    }
+     var files: File
+     init(key: String, file: File) {
+         self.key = key
+         self.files = file
+     }
 }
 
 class FileViewData {
     var filename: String = String()
     var language: String = String()
+    var rawURL: String = String()
     var type: String = String()
     var size: Int = 0
+ 
+    
 }
 

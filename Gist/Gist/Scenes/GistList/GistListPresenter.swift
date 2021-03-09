@@ -13,6 +13,8 @@ protocol GistListPresentationLogic {
     func presentGistList(response: GistList.GetGistList.Response.Failure)
     func presentSelectGist(response: GistList.SelectGist.Response.Success)
     func presentSelectGist(response: GistList.SelectGist.Response.Failure)
+    func presentFavoriteGist(response: GistList.FavoriteGist.Response.Success)
+    func presentFavoriteGist(response: GistList.FavoriteGist.Response.Failure)
 
 }
 
@@ -22,7 +24,6 @@ class GistListPresenter: GistListPresentationLogic {
     weak var viewController: GistListDisplayLogic?
 
     func presentGistList(response: GistList.GetGistList.Response.Success) {
-       //print(response.caracter)
         viewController?.displayGistList(viewModel: GistList.GetGistList.ViewModel.Success(gists: response.gists))
     }
     func presentGistList(response: GistList.GetGistList.Response.Failure) {
@@ -35,5 +36,11 @@ class GistListPresenter: GistListPresentationLogic {
     func presentSelectGist(response: GistList.SelectGist.Response.Failure) {
         viewController?.displayFailureSelectGist(viewModel: GistList.SelectGist.ViewModel.Failure(error: response.error))
     }
-
+    func presentFavoriteGist(response: GistList.FavoriteGist.Response.Success) {
+        viewController?.displayFavoriteGist(viewModel: GistList.FavoriteGist.ViewModel.Success(selectGist: response.selectGist))
+    }
+    
+    func presentFavoriteGist(response: GistList.FavoriteGist.Response.Failure) {
+        viewController?.displayFailureFavoriteGist(viewModel: GistList.FavoriteGist.ViewModel.Failure(error: response.error))
+    }
 }

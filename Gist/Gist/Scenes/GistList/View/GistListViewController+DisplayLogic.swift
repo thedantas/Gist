@@ -13,30 +13,34 @@ protocol GistListDisplayLogic: class {
     func displayFailureGistList(viewModel: GistList.GetGistList.ViewModel.Failure)
     func displaySelectGist(viewModel: GistList.SelectGist.ViewModel.Success)
     func displayFailureSelectGist(viewModel: GistList.SelectGist.ViewModel.Failure)
-
+    func displayFavoriteGist(viewModel: GistList.FavoriteGist.ViewModel.Success)
+    func displayFailureFavoriteGist(viewModel: GistList.FavoriteGist.ViewModel.Failure)
 }
 
 
 extension GistListViewController: GistListDisplayLogic {
-
+    
+    func displayFavoriteGist(viewModel: GistList.FavoriteGist.ViewModel.Success) {
+        
+    }
+    
+    func displayFailureFavoriteGist(viewModel: GistList.FavoriteGist.ViewModel.Failure) {
+        showAlert(message: "there was a problem, try again: \(viewModel.error)")
+    }
+    
     func displayGistList(viewModel: GistList.GetGistList.ViewModel.Success) {
-        print(viewModel.gists.count)
-        locally.append(contentsOf: viewModel.gists)
-        fetchDevices(stDevices: locally)
-     //   self.caracter.append(contentsOf: viewModel.caracter) ///= viewModel.caracter
-      //  print(self.caracter)
-        //print(viewModel.caract)
-        //tableView.reloadData()
+        gistValue.append(contentsOf: viewModel.gists)
+        fetchGist(gists: gistValue)
         
     }
     func displayFailureGistList(viewModel: GistList.GetGistList.ViewModel.Failure) {
-     
+        showAlert(message: "there was a problem, try again: \(viewModel.error)")
     }
     func displaySelectGist(viewModel: GistList.SelectGist.ViewModel.Success) {
         self.router?.routeToDetails(view: self)
     }
     
     func displayFailureSelectGist(viewModel: GistList.SelectGist.ViewModel.Failure) {
-        
+        showAlert(message: "there was a problem, try again: \(viewModel.error)")
     }
 }
