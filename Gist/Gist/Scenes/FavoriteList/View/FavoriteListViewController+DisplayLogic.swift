@@ -13,10 +13,21 @@ protocol FavoriteListDisplayLogic: class {
     func displayFailureFavoriteList(viewModel: FavoriteList.GetGistList.ViewModel.Failure)
     func displaySelectFavoriteList(viewModel: FavoriteList.SelectGist.ViewModel.Success)
     func displayFailureSelectFavoriteList(viewModel: FavoriteList.SelectGist.ViewModel.Failure)
-    
+    func displayUnSelectFavoriteList(viewModel: FavoriteList.SelectGist.ViewModel.Success)
+    func displayFailureUnSelectFavoriteList(viewModel: FavoriteList.SelectGist.ViewModel.Failure)
 }
 
 extension FavoriteListViewController: FavoriteListDisplayLogic {
+    func displayUnSelectFavoriteList(viewModel: FavoriteList.SelectGist.ViewModel.Success) {
+        filteredData.removeAll()
+        gistValue.removeAll()
+        interactor?.getFavoriteList(request: FavoriteList.GetGistList.Request())
+    }
+    
+    func displayFailureUnSelectFavoriteList(viewModel: FavoriteList.SelectGist.ViewModel.Failure) {
+        showAlert(message: "there was a problem, try again: \(viewModel.error)")
+    }
+    
     func displaySelectFavoriteList(viewModel: FavoriteList.SelectGist.ViewModel.Success) {
         if let url = URL(string: viewModel.selectGist.htmlUrl) {
             UIApplication.shared.open(url)

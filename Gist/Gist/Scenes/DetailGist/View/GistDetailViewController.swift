@@ -85,7 +85,6 @@ class GistDetailViewController: UIViewController {
             ownerLabel.topAnchor.constraint(equalTo: ownerImage.bottomAnchor, constant: 20),
             ownerLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             ownerLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-           // ownerLabel.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -20),
             
             tableView.topAnchor.constraint(equalTo: ownerImage.bottomAnchor, constant: 60),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -108,7 +107,7 @@ class GistDetailViewController: UIViewController {
         return TitleHeaderFooterConfigurator(model: model)
     }
     
-    func fetchDevices(stDevices: [File]) {
+    func fetchFiles(stDevices: [File]) {
         tableViewManager.data = [TableSection(rows: stDevices.map(makeDeviceRowConfigurator(from:)))]
         tableView.reloadData()
     }

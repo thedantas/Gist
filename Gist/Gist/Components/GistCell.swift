@@ -8,6 +8,10 @@
 import UIKit
 import Kingfisher
 
+protocol CollectionProtocol{
+    func onFavoriteGist(index: GistsViewData)
+}
+
 final class GistCell: UITableViewCell {
   
      let idLabel = UILabel()
@@ -18,37 +22,52 @@ final class GistCell: UITableViewCell {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(systemName: "star"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFill
+
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
+        button.frame = CGRect(x: 0, y: 0, width: 120, height: 120)
         return button
     }()
-  
-    @objc func increaseFunc() {
-
+    var gistSelect = GistsViewData()
+    var delegate: CollectionProtocol?
+    
+    @objc func favorited() {
+    
+        if (UserDefaults.standard.bool(forKey: gistSelect.id)){
+            favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
+     
+        } else{
+            favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+           
+        }
+        delegate?.onFavoriteGist(index: gistSelect)
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
-        favoriteButton.addTarget(self, action: #selector(increaseFunc), for: .touchUpInside)
+        favoriteButton.addTarget(self, action: #selector(favorited), for: .touchUpInside)
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    func update(description: String, login: String, state: String, image: String) {
+    func update(description: String, login: String, state: String, image: String, git: GistsViewData) {
           idLabel.text = description
           nameLabel.text = login
-          statusLabel.text = "types: \(state)"
+          statusLabel.text = state
           loginImageView.kf.setImage(with: URL(string: image))
-        
+        if (UserDefaults.standard.bool(forKey: git.id)){
+            favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        } else{
+            favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
+        }
       }
 
     private func setupUI() {
         nameLabel.font = UIFont.preferredFont(forTextStyle: .headline)
         idLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
-        statusLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
-        
+        statusLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
+        statusLabel.textColor = .blue
         loginImageView.heightAnchor.constraint(equalToConstant: 60).isActive = true
         loginImageView.widthAnchor.constraint(equalToConstant: 60).isActive = true
         loginImageView.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
@@ -57,6 +76,9 @@ final class GistCell: UITableViewCell {
         loginImageView.layer.borderWidth = 3.0
         loginImageView.layer.borderColor = UIColor.white.cgColor
         loginImageView.translatesAutoresizingMaskIntoConstraints = false
+        favoriteButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        favoriteButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        favoriteButton.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
         
         let contentStackView = UIStackView()
         contentStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -82,7 +104,8 @@ final class GistCell: UITableViewCell {
             horizontalContentStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             horizontalContentStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             horizontalContentStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-            horizontalContentStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8)
+            horizontalContentStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+
         ])
     }
 

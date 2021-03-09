@@ -8,7 +8,9 @@
 import Foundation
 import UIKit
 
-extension GistListViewController: UITableViewDelegate, UITableViewDataSource {
+extension GistListViewController: UITableViewDelegate, UITableViewDataSource, CollectionProtocol {
+
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredData.count
     }
@@ -21,15 +23,15 @@ extension GistListViewController: UITableViewDelegate, UITableViewDataSource {
         for element in currentLastItem.files {
             file += " \(element.type)"
         }
-        selectData = currentLastItem
-        cell.favoriteButton.addTarget(self, action: #selector(self.onClickedMapButton(_:)), for: .touchUpInside)
-        
-        cell.update(description: currentLastItem.gistsDescription, login: currentLastItem.owner.login, state: file, image: currentLastItem.owner.avatar)
+        cell.delegate = self
+        cell.gistSelect = currentLastItem
+        cell.update(description: currentLastItem.gistsDescription, login: currentLastItem.owner.login, state: file, image: currentLastItem.owner.avatar, git: currentLastItem)
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectItem = filteredData[indexPath.row]
         self.interactor?.selectGist(request: GistList.SelectGist.Request(selectGist: selectItem))
+       
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -41,9 +43,11 @@ extension GistListViewController: UITableViewDelegate, UITableViewDataSource {
          
         }
     }
-    @objc func onClickedMapButton(_ sender: Any?) {
-
-        interactor?.favoriteGist(request: GistList.SelectGist.Request(selectGist: selectData))
-        }
+    
+    func onFavoriteGist(index: GistsViewData) {
+        interactor?.favoriteGist(request: GistList.SelectGist.Request(selectGist: index))
+    }
+    
+ 
     
 }

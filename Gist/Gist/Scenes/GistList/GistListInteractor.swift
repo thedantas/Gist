@@ -30,9 +30,9 @@ class GistListInteractor: GistListBusinessLogic, GistListDataStore {
     init(service: GistListWorkerProtocol, storage: StorageProtocol = Storage()) {
         self.worker = service
         self.storage = storage
- 
+        
     }
-
+    
     func selectGist(request: GistList.SelectGist.Request) {
         if request.selectGist.owner.login != "" {
             self.selectGist = request.selectGist
@@ -47,23 +47,31 @@ class GistListInteractor: GistListBusinessLogic, GistListDataStore {
             switch result {
             case .success(let data):
                 self.presenter?.presentGistList(response: GistList.GetGistList.Response.Success(gists: self.getGists(model: data)))
-
+                
             case .failure(let error):
                 self.presenter?.presentGistList(response: GistList.GetGistList.Response.Failure(error: error))
-
+                
             }
             
         }
     }
     
     func favoriteGist(request: GistList.SelectGist.Request) {
-     
-        if request.selectGist.owner.login != "" {
-            storage?.saveGists(data:  getDataToSave(data: request.selectGist))
-            self.presenter?.presentFavoriteGist(response: GistList.FavoriteGist.Response.Success(selectGist: request.selectGist))
-        } else{
-            self.presenter?.presentFavoriteGist(response: GistList.FavoriteGist.Response.Failure(error: GistsError.failedToSelect))
+        let isFavorited = UserDefaults.standard.bool(forKey: request.selectGist.id)
+        
+        if isFavorited {
+            UserDefaults.standard.set(false, forKey: request.selectGist.id)
+            storage?.deleteGist(data: request.selectGist)
+        }else{
+            if request.selectGist.owner.login != "" {
+                UserDefaults.standard.set(true, forKey: request.selectGist.id)
+                storage?.saveGists(data:  getDataToSave(data: request.selectGist))
+                self.presenter?.presentFavoriteGist(response: GistList.FavoriteGist.Response.Success(selectGist: request.selectGist))
+            } else{
+                self.presenter?.presentFavoriteGist(response: GistList.FavoriteGist.Response.Failure(error: GistsError.failedToSelect))
+            }
         }
+        
     }
     
     func getGists(model: [GistsResponse]) -> [GistsViewData] {
@@ -80,13 +88,12 @@ class GistListInteractor: GistListBusinessLogic, GistListDataStore {
             viewData.lastUpdate = element.updatedAt ?? String()
             viewData.gistsDescription = element.welcomeDescription ?? String()
             viewData.comments = element.comments ?? 0
-            viewData.favorite = false
             let files = getFiles(data: element.files!)
-        
+            
             if !files.isEmpty {
                 for file in files {
                     var i = 0
-               
+                    
                     filesViewData[i].filename = file.files.filename
                     filesViewData[i].language = file.files.language ?? String()
                     filesViewData[i].size = file.files.size
@@ -96,9 +103,9 @@ class GistListInteractor: GistListBusinessLogic, GistListDataStore {
                     viewData.files.append(file.files)
                     i += 1
                 }
-
+                
             }
-     
+            
             if let owner = element.owner {
                 ownerViewData.login = owner.login ?? String()
                 ownerViewData.id =  owner.id ?? 0

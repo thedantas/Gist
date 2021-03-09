@@ -32,7 +32,7 @@ extension GistDetailViewController: GistDetailDisplayLogic {
     func displayGistDetail(viewModel: GistDetail.GetGistDetail.ViewModel.Success) {
         ownerLabel.text = "Owner : \(viewModel.gist.owner.login)"
         ownerImage.kf.setImage(with: URL(string: viewModel.gist.owner.avatar))
-        fetchDevices(stDevices: viewModel.gist.files)
+        fetchFiles(stDevices: viewModel.gist.files)
     }
     func displayFailureGistDetail(viewModel: GistDetail.GetGistDetail.ViewModel.Failure)
     {

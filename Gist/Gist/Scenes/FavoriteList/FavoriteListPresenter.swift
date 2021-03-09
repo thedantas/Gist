@@ -13,7 +13,8 @@ protocol FavoriteListPresentationLogic {
     func presentGistList(response: FavoriteList.GetGistList.Response.Failure)
     func presentSelectGist(response: FavoriteList.SelectGist.Response.Success)
     func presentSelectGist(response: FavoriteList.SelectGist.Response.Failure)
-
+    func presentUnSelectGist(response: FavoriteList.SelectGist.Response.Success)
+    func presentUnSelectGist(response: FavoriteList.SelectGist.Response.Failure)
 }
 
 class FavoriteListPresenter: FavoriteListPresentationLogic {
@@ -34,5 +35,13 @@ class FavoriteListPresenter: FavoriteListPresentationLogic {
     func presentSelectGist(response: FavoriteList.SelectGist.Response.Failure) {
         viewController?.displayFailureSelectFavoriteList(viewModel: FavoriteList.SelectGist.ViewModel.Failure(error: response.error))
     }
+    func presentUnSelectGist(response: FavoriteList.SelectGist.Response.Success) {
+        viewController?.displayUnSelectFavoriteList(viewModel: FavoriteList.SelectGist.ViewModel.Success(selectGist: response.selectGist))
+    }
+    
+    func presentUnSelectGist(response: FavoriteList.SelectGist.Response.Failure) {
+        viewController?.displayFailureUnSelectFavoriteList(viewModel: FavoriteList.SelectGist.ViewModel.Failure(error: response.error))
+    }
+    
 
 }

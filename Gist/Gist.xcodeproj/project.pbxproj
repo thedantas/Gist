@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0B0BE4CB25F1C94D00C774B4 /* GistsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0BE4CA25F1C94D00C774B4 /* GistsError.swift */; };
-		0B0BE4D525F2682A00C774B4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0BE4D425F2682A00C774B4 /* TabBarViewController.swift */; };
 		0B0BE4E125F2876900C774B4 /* GistViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0BE4E025F2876900C774B4 /* GistViewData.swift */; };
 		0B0BE4ED25F65E9200C774B4 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0BE4EC25F65E9100C774B4 /* WebViewController.swift */; };
 		0B0BE4F625F661CA00C774B4 /* WebFileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0BE4F525F661CA00C774B4 /* WebFileConfigurator.swift */; };
@@ -88,7 +87,6 @@
 
 /* Begin PBXFileReference section */
 		0B0BE4CA25F1C94D00C774B4 /* GistsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsError.swift; sourceTree = "<group>"; };
-		0B0BE4D425F2682A00C774B4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		0B0BE4E025F2876900C774B4 /* GistViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistViewData.swift; sourceTree = "<group>"; };
 		0B0BE4EC25F65E9100C774B4 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		0B0BE4F525F661CA00C774B4 /* WebFileConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebFileConfigurator.swift; sourceTree = "<group>"; };
@@ -186,14 +184,6 @@
 				0B0BE4CA25F1C94D00C774B4 /* GistsError.swift */,
 			);
 			path = Error;
-			sourceTree = "<group>";
-		};
-		0B0BE4DC25F2873B00C774B4 /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				0B0BE4D425F2682A00C774B4 /* TabBarViewController.swift */,
-			);
-			path = TabBar;
 			sourceTree = "<group>";
 		};
 		0B0BE4EB25F65E6F00C774B4 /* WebFile */ = {
@@ -301,7 +291,6 @@
 				0B87AE9225F14D150091BAB2 /* DetailGist */,
 				0B45E01D25EF01530019921C /* GistList */,
 				0B45E01E25EF015D0019921C /* FavoriteList */,
-				0B0BE4DC25F2873B00C774B4 /* TabBar */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -606,7 +595,6 @@
 				0B87AEAE25F19BA90091BAB2 /* GistDetailConfigurator.swift in Sources */,
 				0B45DF2425EEAD1D0019921C /* GistListViewController.swift in Sources */,
 				0B87AE9D25F170D70091BAB2 /* UIViewController+Extensions.swift in Sources */,
-				0B0BE4D525F2682A00C774B4 /* TabBarViewController.swift in Sources */,
 				0B45DF2025EEAD1D0019921C /* AppDelegate.swift in Sources */,
 				0B0BE4FB25F6633C00C774B4 /* WebFileInteractor.swift in Sources */,
 				0B87AE7525F1069F0091BAB2 /* TitleHeaderFooter.swift in Sources */,
