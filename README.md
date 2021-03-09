@@ -26,7 +26,7 @@ To persist offline data I used the native framework, CoreData, It is used to per
 ## Screens
 ### Gist List:
 <p float="left">
-  <img src= ![](gitAssets/gist.PNG) 
+  <img src= (gitAssets/gist.PNG) 
  height="500">
 
 ### Detail:
