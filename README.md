@@ -26,15 +26,23 @@ To persist offline data I used the native framework, CoreData, It is used to per
 ## Screens
 ### Gist List:
 <p float="left">
-  <img src= (gitAssets/gist.PNG) 
+  <img src="https://github.com/thedantas/Gist/blob/main/gitAssets/gist.PNG"
  height="500">
 
 ### Detail:
-![](gitAssets/detail.PNG) 
+<p float="left">
+  <img src="https://github.com/thedantas/Gist/blob/main/gitAssets/detail.PNG"
+ height="500">
 
 
 ### Favorite:
-![](gitAssets/favorite_search.PNG) 
+<p float="left">
+  <img src="https://github.com/thedantas/Gist/blob/main/gitAssets/favorite_search.PNG"
+ height="500">
+
 
 ### File:
-![](gitAssets/file.PNG) 
+<p float="left">
+  <img src="https://github.com/thedantas/Gist/blob/main/gitAssets/file.PNG"
+ height="500">
+
